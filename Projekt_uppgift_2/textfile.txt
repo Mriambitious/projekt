@@ -1,0 +1,9 @@
+docker build -t my-linux-server .
+
+docker run -d --name linux-server -p 2222:22 my-linux-server
+
+docker ps
+
+ssh admin@127.0.0.1 -p 2222
+
+pytest e:/appleidscript/test_network_config.py -k "test_show_host_name"
